@@ -1,71 +1,89 @@
+<!doctype html>
+<html lang="en">
 
-William Gehrke <williamegehrke@gmail.com>
-  8:42 PM (0 minutes ago)
-  to me
-  
-  <!doctype html>
-  <html lang="en">
-  
-  <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
-  
-  
-  
-  <!---- Movie Jumbotron-->
-  <section class="hero is-medium is-link">
-      <div class="hero-body">
-  
-         
-          <h1 class="title is-1">Movie Search</h1>
-  
-           <!--- Movie Search Input-->
-          <input class="input" type="text" placeholder="Text input">
-           <!--- Movie Search End-->
-  
-            <!--- Movie Search Button-->
-          <button class="button">Button</button>
-           <!--- Movie Search  End-->
-      </div>
-  </section>
-  
-  <!---- Movie Jumbotron End-->
-  
-  <!--- Body Start-->
-  <body>
-  
-  
-  
-  
-      
-      <!--- MOVIE TITLE  START-->
-      <div class="columns">
-          <div class="column">
-              <h2 class="title is-2">Movie Name</h2>
-              <p>Movie Title</p>
-  
-          </div>
-  
-          <!--- MOVIE INFORMATION START-->
-          <div class="column">
-              <h2 class="title is-2">Movie Information</h2>
-              <p></p>
-              <ul>
-                  <li>info 1</li>
-                  <li>info 2</li>
-                  <li>info 3</li>
-          </div>
-  
-          <!--- MOVIE INFORMATION END-->
-  
-          <!--- MOVIE AVAILBILITY START-->
-          <div class="column">
-              <h2 class="title is-2">Availability</h2>
-              <p>Availabilty?</p>
-          </div>
-  
-          <!--- MOVIE AVAILBILITY END-->
-  
-  </body>
+
+
+
+<!---- Movie Jumbotron-->
+<section class="hero is-medium is-link">
+    <div class="hero-body">
+
+       
+        <h1 class="title is-1">Movie Search</h1>
+
+         <!--- Movie Search Input-->
+        <input id="search-text" class="input" type="text" placeholder="Text input" value="People">
+         <!--- Movie Search End-->
+
+          <!--- Movie Search Button-->
+        <button id="search-bt" class="button">Button</button>
+         <!--- Movie Search  End-->
+    </div>
+</section>
+
+<!---- Movie Jumbotron End-->
+
+<!--- Body Start-->
+<body>
+
+
+
+
+    
+    <!--- MOVIE TITLE  START-->
+    <div class="columns">
+        <div class="column">
+            <h2 class="title is-2">Movie Name</h2>
+            <p id="Title">Movie Title</p>
+
+        </div>
+        <!--- MOVIE INFORMATION START-->
+        <div class="column">
+            <h2 class="title is-2">Movie Information</h2>
+
+            <h3 class="movie-info">Genre:</h3>
+            <p id="Genre"></p>
+            <h3 class="movie-info">Director:</h3>
+            <p id="Director"></p>
+            <h3 class="movie-info">Plot:</h3>
+            <p id="Plot"></p>
+            <h3 class="movie-info">Score:</h3>
+            <p id="Score"></p>
+
+        </div>
+
+        <!--- MOVIE INFORMATION END-->
+        
+        <div class="column">
+          <img id="Poster">
+        </div>
+
+        <!-- // tmovs: 3723
+// tseries: 1972
+// tvids: 5695 -->
+
+
+        <!--- MOVIE AVAILBILITY START-->
+        <!-- <div class="column">
+            <h2 class="title is-2">Availability</h2>
+            <p>Availabilty?</p>
+        </div> -->
+        <!--- MOVIE AVAILBILITY END-->
+
+
+<div>
+<div class="country">
+  <p id="country-info"></p>
+</div>
+</div>
+
+        <script src="script.js"></script>
+</body>
