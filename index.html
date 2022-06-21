@@ -20,7 +20,7 @@
     <div class="hero-body">
 
        
-        <h1 class="title is-1">Movie Search</h1>
+        <h1 class="title is-1">Streaming Search</h1>
 
          <!--- Movie Search Input-->
         <input id="search-text" class="input" type="text" placeholder="Text input" value="Movie/Show Name">
@@ -44,14 +44,17 @@
     <!--- MOVIE TITLE  START-->
     <div class="columns ml-2">
         <div class="column">
-            <h2 class="title is-2">Movie Name</h2>
-            <p id="Title" class = "is-size-3 mgl-large">Movie Title</p>
+            <h2 class="title is-2">Title:</h2>
+            <p id="Title" class = "is-size-3 mgl-large">Title</p>
             <img id="Poster">
+            <h3>
+              <p id="tagLine"></p>
+            </h3>
 
         </div>
         <!--- MOVIE INFORMATION START-->
         <div class="column">
-            <h2 class="title is-2">Movie Information</h2>
+            <h2 class="title is-2">About</h2>
             <div class="columns">
 
         <div class="columns is-vcentered">
@@ -93,10 +96,29 @@
 
         <!--- MOVIE AVAILBILITY START-->
         <div class="column">
-            <h2 class="title is-2">Movie Availability</h2>
-        <div class="column">
-            <p id="streamingServices">Availabilty?</p>
-
+            <h2 class="title is-2">Availability</h2>
+            <div class="columns">
+                <div class="column is-size-4 has-text-link is-underlined">
+                  Netflix:
+                  <p id="streamingNetflix"></p>
+                </div>
+                <div class="column is-size-4 has-text-link is-underlined">
+                  Prime:
+                  <p id="streamingPrime"></p>
+                </div>
+                <div class="column is-size-4 has-text-link is-underlined">
+                  Disney:
+                  <p id="streamingDisney"></p>
+                </div>
+                <div class="column is-size-4 has-text-link is-underlined">
+                  Hulu:
+                  <p id="streamingHulu"></p>
+                </div>
+                <div class="column is-size-4 has-text-link is-underlined">
+                    Apple TV:
+                    <p id="streamingApple"></p>
+                  </div>
+              </div>
         </div>
         <!--- MOVIE AVAILBILITY END-->
 
