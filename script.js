@@ -1,6 +1,8 @@
 // 5216b962
 // https://omdbapi.com/?t=avengers&apikey=5216b962
 
+// function to get api data and edit html //
+
 $(document).ready(function () {
   var movieCountry = "";
   var movieTag = "";
@@ -20,10 +22,10 @@ $(document).ready(function () {
         $("#Plot").text(data["Plot"]);
         $("#Poster").attr("src", data["Poster"]);
         $("#Score").text(data["imdbRating"]);
-        
-        
-        
 
+
+
+        // function that pass movieTag variable from above to second api //
         const options = {
           method: 'GET',
           headers: {
@@ -31,15 +33,13 @@ $(document).ready(function () {
             'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
           }
         };
-        
+
         fetch("https://streaming-availability.p.rapidapi.com/get/basic?country=us&imdb_id=" + movieTag + "&output_language=en", options)
           .then(response => response.json())
           .then(response => console.log(response))
-          $("#streamingServices").text(data["streamingInfo"]["netflix"]["us"]);
-          
-  });
-});
+        // $("#streamingServices").text(data["streamingInfo"]["netflix"]["us"]);
 
-console.log(movieTag);
+      });
+  });
 
 });
