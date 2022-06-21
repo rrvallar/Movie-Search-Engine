@@ -1,15 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie</title>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
-  <body>
-    <header>
-      <h1>Movie Search Engine</h1>
-      <h2></h2>
-    </header>
-  </body>
-</html>
+
+<!---- Movie Jumbotron-->
+<section class="hero is-danger is-medium is-link">
+    <div class="hero-body">
+
+       
+        <h1 class="title is-1">Movie Search</h1>
+
+         <!--- Movie Search Input-->
+        <input id="search-text" class="input" type="text" placeholder="Text input" value="People">
+         <!--- Movie Search End-->
+
+          <!--- Movie Search Button-->
+        <button id="search-bt" class="button button is-normal is-fullwidth">Button</button>
+         <!--- Movie Search  End-->
+    </div>
+</section>
+
+<!---- Movie Jumbotron End-->
+
+<!--- Body Start-->
+<body>
+
+
+
+
+    
+    <!--- MOVIE TITLE  START-->
+    <div class="columns">
+        <div class="column">
+            <h2 class="title is-2">Movie Name</h2>
+            <h1 id="Title" class="title is-5">Movie Title</p>
+
+        </div>
+        <!--- MOVIE INFORMATION START-->
+        <div class="column">
+            <h2 class="title is-2">Movie Information</h2>
+
+            <h3 class="movie-info title is-5">Genre:</h3>
+            <p id="Genre" class="title is-6"></p>
+            <h3 class="movie-info title is-5">Director:</h3>
+            <p id="Director" class="title is-6"></p>
+            <h3 class="movie-info title is-5">Plot:</h3>
+            <p id="Plot" class="title is-6" ></p>
+            <h3 class="movie-info title is-5">Score:</h3>
+            <p id="Score" class="title is-6"></p>
+
+        </div>
+
+        <!--- MOVIE INFORMATION END-->
+        
+        <div class="column">
+          <img id="Poster">
+        </div>
+
+        <!-- // tmovs: 3723
+// tseries: 1972
+// tvids: 5695 -->
+
+
+        <!--- MOVIE AVAILBILITY START-->
+        <!-- <div class="column">
+            <h2 class="title is-2">Availability</h2>
+            <p>Availabilty?</p>
+        </div> -->
+        <!--- MOVIE AVAILBILITY END-->
+
+
+<div>
+<div class="country">
+  <p id="country-info" class="title is-6"></p>
+</div>
+</div>
+
+        <script src="script.js"></script>
+</body>
