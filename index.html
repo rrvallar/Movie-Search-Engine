@@ -13,6 +13,9 @@
 
 
 <!---- Movie Jumbotron-->
+
+
+
 <section class="hero is-medium is-link">
     <div class="hero-body">
 
@@ -20,11 +23,11 @@
         <h1 class="title is-1">Movie Search</h1>
 
          <!--- Movie Search Input-->
-        <input id="search-text" class="input" type="text" placeholder="Text input" value="People">
+        <input id="search-text" class="input" type="text" placeholder="Text input" value="Movie/Show Name">
          <!--- Movie Search End-->
 
           <!--- Movie Search Button-->
-        <button id="search-bt" class="button">Button</button>
+        <button id="search-bt" class="button">Search</button>
          <!--- Movie Search  End-->
     </div>
 </section>
@@ -39,51 +42,68 @@
 
     
     <!--- MOVIE TITLE  START-->
-    <div class="columns">
+    <div class="columns ml-2">
         <div class="column">
             <h2 class="title is-2">Movie Name</h2>
-            <p id="Title">Movie Title</p>
+            <p id="Title" class = "is-size-3 mgl-large">Movie Title</p>
+            <img id="Poster">
 
         </div>
         <!--- MOVIE INFORMATION START-->
         <div class="column">
             <h2 class="title is-2">Movie Information</h2>
+            <div class="columns">
 
-            <h3 class="movie-info">Genre:</h3>
+        <div class="columns is-vcentered">
+  <div class="column is-8">
+    <p class="bd-notification is-primary">
+        <div class="column">
+            <h3 class="movie-info is-size-4 has-text-link is-underlined">Genre:</h3>
             <p id="Genre"></p>
-            <h3 class="movie-info">Director:</h3>
-            <p id="Director"></p>
-            <h3 class="movie-info">Plot:</h3>
-            <p id="Plot"></p>
-            <h3 class="movie-info">Score:</h3>
-            <p id="Score"></p>
-
         </div>
+        <div class="column">
+            <h3 class="movie-info is-size-4 has-text-link is-underlined">Director:</h3>
+            <p id="Director"></p>
+        </div>
+        <div class="column">
+            <h3 class="movie-info is-size-4 has-text-link is-underlined">Score:</h3>
+            <p id="Score"></p>
+        </div>
+      </div>
+    </p>
+  </div>
+  <div class="column">
+    <p class="bd-notification is-primary">
+        <div class="column">
+            <h3 class="movie-info is-size-4 has-text-link is-underlined">Plot:</h3>
+            <p id="Plot"></p>
+        </div>
+    </p>
+  </div>
+</div>
 
         <!--- MOVIE INFORMATION END-->
         
         <div class="column">
-          <img id="Poster">
+          
         </div>
 
-        <!-- // tmovs: 3723
+        // tmovs: 3723
 // tseries: 1972
-// tvids: 5695 -->
+// tvids: 5695
 
 
         <!--- MOVIE AVAILBILITY START-->
-        <!-- <div class="column">
-            <h2 class="title is-2">Availability</h2>
-            <p>Availabilty?</p>
-        </div> -->
+        <div class="column">
+            <h2 class="title is-2">Movie Availability</h2>
+        <div class="column">
+            <p id="streamingServices">Availabilty?</p>
+
+        </div>
         <!--- MOVIE AVAILBILITY END-->
 
 
-<div>
-<div class="country">
-  <p id="country-info"></p>
-</div>
-</div>
+
 
         <script src="script.js"></script>
 </body>

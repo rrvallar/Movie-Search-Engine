@@ -3,6 +3,7 @@
 
 $(document).ready(function () {
   var movieCountry = "";
+  var movieTag = "";
   $("#search-bt").on("click", function () {
     var keyWord = $("#search-text").val();
     url = `https://omdbapi.com/?t=${keyWord}&apikey=5216b962`;
@@ -11,36 +12,34 @@ $(document).ready(function () {
       .then((data) => {
         console.log(data);
         movieCountry = data["Country"];
+        movieTag = data["imdbID"];
+        console.log(movieTag);
         $("#Title").text(data["Title"]);
         $("#Genre").text(`${data["Genre"]}`);
         $("#Director").text(data["Director"]);
         $("#Plot").text(data["Plot"]);
         $("#Poster").attr("src", data["Poster"]);
         $("#Score").text(data["imdbRating"]);
+        
+        
+        
 
         const options = {
-          method: "GET",
+          method: 'GET',
           headers: {
-            "X-RapidAPI-Key":
-              "695cc9b446msh2d7ac6e6a00ded1p1a65a2jsn1ddb90a9759c",
-            "X-RapidAPI-Host": "unogs-unogs-v1.p.rapidapi.com",
-          },
+            'X-RapidAPI-Key': '89c588b05bmsh60e709fda358096p14890cjsn1969f0e5a15f',
+            'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+          }
         };
-
-        fetch("https://unogs-unogs-v1.p.rapidapi.com/static/countries", options)
-          .then((response) => response.json())
-          .then((response) => {
-            console.log(response);
-            response["results"].forEach((result) => {
-              if (movieCountry == result["country"]) {
-                console.log(result);
-                $("#country-info").text(
-                  `${result["country"]} has ${result["tmovs"]} movies, and ${result["tseries"]} shows on Netflix`
-                );
-              }
-            });
-          })
-          .catch((err) => console.error(err));
-      });
+        
+        fetch("https://streaming-availability.p.rapidapi.com/get/basic?country=us&imdb_id=" + movieTag + "&output_language=en", options)
+          .then(response => response.json())
+          .then(response => console.log(response))
+          $("#streamingServices").text(data["streamingInfo"]["netflix"]["us"]);
+          
   });
+});
+
+console.log(movieTag);
+
 });
