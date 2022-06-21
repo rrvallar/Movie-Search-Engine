@@ -1,6 +1,14 @@
+  // selects HTML by class for placing inner.html //
+var netflixLocation = document.querySelector(".streamingNetflix");
+var primeLocation = document.querySelector(".streamingPrime");
+var disneyLocation = document.querySelector(".streamingDisney");
+var huluLocation = document.querySelector(".streamingHulu");
+var appleLocation = document.querySelector(".streamingApple");
+//Function  start//
 $(document).ready(function () {
   var movieCountry = "";
   var movieTag = "";
+  //button grabs input data and searches api//
   $("#search-bt").on("click", function () {
     var keyWord = $("#search-text").val();
     url = `https://omdbapi.com/?t=${keyWord}&apikey=5216b962`;
@@ -11,6 +19,7 @@ $(document).ready(function () {
         movieCountry = data["Country"];
         movieTag = data["imdbID"];
         console.log(movieTag);
+        //Api data is displayed on page//
         $("#Title").text(data["Title"]);
         $("#Genre").text(`${data["Genre"]}`);
         $("#Director").text(data["Director"]);
@@ -20,7 +29,8 @@ $(document).ready(function () {
         
         
         
-
+        
+        //function inuts "imbdID" into api below//
         const options = {
           method: 'GET',
           headers: {
@@ -28,28 +38,73 @@ $(document).ready(function () {
             'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
           }
         };
-        
+        // Fetches Second API info
         fetch("https://streaming-availability.p.rapidapi.com/get/basic?country=us&imdb_id=" + movieTag + "&output_language=en", options)
           .then(response => response.json())
          
           .then((response) => {
             console.log(response)
             $("#tagLine").text(response.tagline);
+
+            //Checks api for netflix availbility//
             if (response.streamingInfo.netflix) {
               $("#streamingNetflix").text(response.streamingInfo.netflix.us.link);
+              var netflixValue = response.streamingInfo.netflix.us.link;
+              //if available adds button to page for streaming services//
+              netflixLocation.innerHTML ="<button id='netflix-bt' class='button is-link is-outlined'>Available!</button>";
+              console.log(netflixValue);
+              $('#netflix-bt').click(function() {
+                window.location = netflixValue;
+             });
+
+              
+              
             }
+            //Checks api for prime availbility//
             else if (response.streamingInfo.prime) {
               $("#streamingPrime").text(response.streamingInfo.prime.us.link);
+              var primeValue = response.streamingInfo.prime.us.link;
+              console.log(primeValue);
+              //if available adds button to page for streaming services//
+              primeLocation.innerHTML ="<button id='prime-bt' class='button is-link is-outlined'>Available!</button>";
+              $('#prime-bt').click(function() {
+                window.location = primeValue;
+             });
             }
+            //Checks api for disney availbility//
             else if (response.streamingInfo.disney) {
               $("#streamingDisney").text(response.streamingInfo.disney.us.link);
+              var disneyValue = response.streamingInfo.disney.us.link;
+              console.log(disneyValue);
+              //if available adds button to page for streaming services//
+              disneyLocation.innerHTML ="<button id='disney-bt' class='button is-link is-outlined'>Available!</button>";
+              $('#disney-bt').click(function() {
+                window.location = disneyValue;
+             });
             }
+            //Checks api for hulu availbility//
             else if (response.streamingInfo.hulu) {
               $("#streamingHulu").text(response.streamingInfo.hulu.us.link);
+              var huluValue = response.streamingInfo.hulu.us.link;
+              console.log(huluValue);
+              //if available adds button to page for streaming services//
+              huluLocation.innerHTML ="<button id='hulu-bt' class='button is-link is-outlined'>Available!</button>";
+              $('#hulu-bt').click(function() {
+                window.location = huluValue;
+             });
             }
+            //Checks api for apple availbility//
             else if (response.streamingInfo.apple) {
               $("#streamingApple").text(response.streamingInfo.apple.us.link);
+              var appleValue = response.streamingInfo.apple.us.link;
+              console.log(appleValue);
+              //if available adds button to page for streaming services//
+              appleLocation.innerHTML ="<button id='apple-bt' class='button is-link is-outlined'>Available!</button>";
+              $('#apple-bt').click(function() {
+                window.location = appleValue;
+             });
             }
+            
             
             
             
@@ -60,9 +115,9 @@ $(document).ready(function () {
           // })
           
 
+                
           
-          
-          
+             
   });
   
 
