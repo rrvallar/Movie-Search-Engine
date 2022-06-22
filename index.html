@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="/style.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  </head>
+
+</head>
 
 
 
@@ -17,113 +17,131 @@
 
 
 <section class="hero is-medium is-link">
-    <div class="hero-body">
+  <div class="hero-body">
 
-       
-        <h1 class="title is-1">Streaming Search</h1>
 
-         <!--- Movie Search Input-->
-        <input id="search-text" class="input" type="text" placeholder="Text input" value="Movie/Show Name">
-         <!--- Movie Search End-->
+    <h1 class="title is-1">Streaming Search</h1>
 
-          <!--- Movie Search Button-->
-        <button id="search-bt" class="button">Search</button>
-         <!--- Movie Search  End-->
-    </div>
+    <!--- Movie Search Input-->
+    <input id="search-text" class="input" type="text" placeholder="Text input" value="Movie/Show Name">
+    <!--- Movie Search End-->
+
+    <!--- Movie Search Button-->
+    <button id="search-bt" class="button">Search</button>
+    <!--- Movie Search  End-->
+  </div>
 </section>
 
 <!---- Movie Jumbotron End-->
 
 <!--- Body Start-->
+
 <body>
 
 
 
 
-    
-    <!--- MOVIE TITLE  START-->
-    <div class="columns ml-2">
-        <div class="column">
-            <h2 class="title is-2">Title:</h2>
-            <p id="Title" class = "is-size-3 mgl-large">Title</p>
-            <img id="Poster">
-            <h3>
-              <p id="tagLine"></p>
-            </h3>
 
-        </div>
-        <!--- MOVIE INFORMATION START-->
-        <div class="column">
-            <h2 class="title is-2">About</h2>
-            <div class="columns">
+  <!--- MOVIE TITLE  START-->
+  <div class="columns ml-2">
+    <div class="column">
+      <h2 class="title is-2">Title:</h2>
+      <p id="Title" class="is-size-3 mgl-large"></p>
+      <img  id="Poster">
+      <h3>
+        <p class="has-text-weight-semibold is-size-7" id="tagLine"></p>
+      </h3>
+
+    </div>
+    <!--- MOVIE INFORMATION START-->
+    <div class="column">
+      <h2 class="title is-2 has-text-centered">About</h2>
+      <div class="columns">
 
         <div class="columns is-vcentered">
-  <div class="column is-8">
-    <p class="bd-notification is-primary">
-        <div class="column">
-            <h3 class="movie-info is-size-4 has-text-link is-underlined">Genre:</h3>
-            <p id="Genre"></p>
+          <div class="column is-8">
+            <p class="bd-notification is-primary">
+            <div class="column">
+              <h3 class="movie-info is-size-4 has-text-link is-underlined">Genre:</h3>
+              <p id="Genre"></p>
+            </div>
+            <div class="column">
+              <h3 class="movie-info is-size-4 has-text-link is-underlined">Director:</h3>
+              <p id="Director"></p>
+            </div>
+            <div class="column">
+              <h3 class="movie-info is-size-4 has-text-link is-underlined">Score:</h3>
+              <p id="Score"></p>
+            </div>
+          </div>
+          </p>
         </div>
         <div class="column">
-            <h3 class="movie-info is-size-4 has-text-link is-underlined">Director:</h3>
-            <p id="Director"></p>
-        </div>
-        <div class="column">
-            <h3 class="movie-info is-size-4 has-text-link is-underlined">Score:</h3>
-            <p id="Score"></p>
-        </div>
-      </div>
-    </p>
-  </div>
-  <div class="column">
-    <p class="bd-notification is-primary">
-        <div class="column">
+          <p class="bd-notification is-primary">
+          <div class="column">
             <h3 class="movie-info is-size-4 has-text-link is-underlined">Plot:</h3>
             <p id="Plot"></p>
+          </div>
+          </p>
         </div>
-    </p>
-  </div>
-</div>
-
-        <!--- MOVIE INFORMATION END-->
         
-        <div class="column">
-          
+      </div>
+
+      <!--- MOVIE INFORMATION END-->
+
+      <div class="column">
+
+      </div>
+
+
+
+
+      <!--- MOVIE AVAILBILITY START-->
+      <div class="column">
+        <h2 class="title is-2 has-text-centered">Availability</h2>
+        <div class="columns">
+          <div class="column is-size-4 has-text-link is-underlined">
+            Netflix:
+            <div class="streamingNetflix">
+
+
+            </div>
+          </div>
+          <div class="column is-size-4 has-text-link is-underlined">
+            Prime:
+
+            <div class="streamingPrime">
+
+            </div>
+          </div>
+          <div class="column is-size-4 has-text-link is-underlined">
+            Disney:
+
+            <div class="streamingDisney">
+
+
+
+
+            </div>
+          </div>
+          <div class="column is-size-4 has-text-link is-underlined">
+            Hulu:
+            <div class="streamingHulu">
+
+            </div>
+          </div>
+          <div class="column is-size-4 has-text-link is-underlined">
+            Apple:
+            <div class="streamingApple">
+
+            </div>
+          </div>
         </div>
-
-        
-
-
-        <!--- MOVIE AVAILBILITY START-->
-        <div class="column">
-            <h2 class="title is-2">Availability</h2>
-            <div class="columns">
-                <div class="column is-size-4 has-text-link is-underlined">
-                  Netflix:
-                  <p id="streamingNetflix"></p>
-                </div>
-                <div class="column is-size-4 has-text-link is-underlined">
-                  Prime:
-                  <p id="streamingPrime"></p>
-                </div>
-                <div class="column is-size-4 has-text-link is-underlined">
-                  Disney:
-                  <p id="streamingDisney"></p>
-                </div>
-                <div class="column is-size-4 has-text-link is-underlined">
-                  Hulu:
-                  <p id="streamingHulu"></p>
-                </div>
-                <div class="column is-size-4 has-text-link is-underlined">
-                    Apple TV:
-                    <p id="streamingApple"></p>
-                  </div>
-              </div>
-        </div>
-        <!--- MOVIE AVAILBILITY END-->
+      </div>
+      <!--- MOVIE AVAILBILITY END-->
 
 
 
-
-        <script src="script.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="script.js"></script>
 </body>
