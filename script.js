@@ -10,6 +10,11 @@ $(document).ready(function () {
   var movieTag = "";
   //button grabs input data and searches api//
   $("#search-bt").on("click", function () {
+    netflixLocation.innerHTML ="";
+    primeLocation.innerHTML ="";
+    disneyLocation.innerHTML="";
+    huluLocation.innerHTML="";
+    appleLocation.innerHTML="";
     var keyWord = $("#search-text").val();
     url = `https://omdbapi.com/?t=${keyWord}&apikey=5216b962`;
     fetch(url)
@@ -103,6 +108,11 @@ $(document).ready(function () {
               $('#apple-bt').click(function() {
                 window.location = appleValue;
              });
+            } 
+            else {
+              function movieNotFound() {
+                alert("Movie/Show not found, check spelling and try again!");
+              }
             }
             
             
@@ -126,3 +136,4 @@ $(document).ready(function () {
 console.log(movieTag);
 
 });
+
