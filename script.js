@@ -3,6 +3,7 @@ var netflixLocation = document.querySelector(".streamingNetflix");
 var primeLocation = document.querySelector(".streamingPrime");
 var disneyLocation = document.querySelector(".streamingDisney");
 var huluLocation = document.querySelector(".streamingHulu");
+var hboLocation = document.querySelector(".streaminghbo");
 var appleLocation = document.querySelector(".streamingApple");
 //Function  start//
 $(document).ready(function () {
@@ -14,6 +15,7 @@ $(document).ready(function () {
     primeLocation.innerHTML ="";
     disneyLocation.innerHTML="";
     huluLocation.innerHTML="";
+    hboLocation.innerHTML="";
     appleLocation.innerHTML="";
     var keyWord = $("#search-text").val();
     url = `https://omdbapi.com/?t=${keyWord}&apikey=5216b962`;
@@ -98,6 +100,17 @@ $(document).ready(function () {
                 window.location = huluValue;
              });
             }
+            //Checks api for disney availbility//
+            else if (response.streamingInfo.hbo) {
+              $("#streaminghbo").text(response.streamingInfo.hbo.us.link);
+              var hboValue = response.streamingInfo.hbo.us.link;
+              console.log(hboValue);
+              //if available adds button to page for streaming services//
+              hboLocation.innerHTML ="<button id='hbo-bt' class='button is-link is-outlined'>Available!</button>";
+              $('#hbo-bt').click(function() {
+                window.location = hboValue;
+             });
+            }
             //Checks api for apple availbility//
             else if (response.streamingInfo.apple) {
               $("#streamingApple").text(response.streamingInfo.apple.us.link);
@@ -108,12 +121,10 @@ $(document).ready(function () {
               $('#apple-bt').click(function() {
                 window.location = appleValue;
              });
-            } 
-            else {
-              function movieNotFound() {
-                alert("Movie/Show not found, check spelling and try again!");
-              }
-            }
+            } else {
+              alert("Movie/Show not found. Check spelling and try again!")
+            };
+            
             
             
             
