@@ -17,6 +17,9 @@ $(document).ready(function () {
     huluLocation.innerHTML="";
     hboLocation.innerHTML="";
     appleLocation.innerHTML="";
+    
+    
+    
     var keyWord = $("#search-text").val();
     url = `https://omdbapi.com/?t=${keyWord}&apikey=5216b962`;
     fetch(url)
@@ -121,9 +124,7 @@ $(document).ready(function () {
               $('#apple-bt').click(function() {
                 window.location = appleValue;
              });
-            } else {
-              alert("Movie/Show not found. Check spelling and try again!")
-            };
+            } 
             
             
             
