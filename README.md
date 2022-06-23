@@ -1,6 +1,8 @@
 # Movie-Search-Engine
 
-This is a search engine that will find availability of sites to stream a specific show or movie at. ![Image 6-21-22 at 7 32 PM](https://user-images.githubusercontent.com/103394466/174913288-1f5b76a4-2803-449e-99c4-b33f3de0e47b.jpg)
+Link to deployed site: https://rrvallar.github.io/Movie-Search-Engine/
+
+This is a search engine that will find availability of sites to stream a specific show or movie at. 
 ![Image 6-21-22 at 7 32 PM](https://user-images.githubusercontent.com/103394466/174913293-335692a4-3174-4a83-b22a-8538604f29b7.jpg)
 
 When a user searches a movie or show it will bring up information such as:
